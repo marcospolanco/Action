@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="LVa-Hc-CC6">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="CXd-sj-xey">
+            <objects>
+                <navigationController id="LVa-Hc-CC6" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="4VM-9e-7Wl">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="TMd-uH-DRW" kind="relationship" relationship="rootViewController" id="ksG-1q-bX0"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pj3-QT-geb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1609" y="-1153"/>
+        </scene>
+        <!--ActionTableViewController-->
+        <scene sceneID="q1s-HK-vcb">
+            <objects>
+                <tableViewController storyboardIdentifier="ActionTableViewController" title="ActionTableViewController" clearsSelectionOnViewWillAppear="NO" id="TMd-uH-DRW" customClass="ActionTableViewController" customModule="Action" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="mWR-N0-2rZ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ActionTableViewCell" id="7Ii-aL-cDa" customClass="ActionTableViewCell" customModule="Action" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7Ii-aL-cDa" id="PUW-Qt-owu">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UI0-gB-Cux">
+                                            <rect key="frame" x="8" y="7" width="110" height="30"/>
+                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="30" id="EjW-ef-msm"/>
+                                                <constraint firstAttribute="width" constant="110" id="RZQ-iq-nOY"/>
+                                            </constraints>
+                                            <state key="normal" title="Button"/>
+                                            <connections>
+                                                <action selector="updateDueDate:" destination="7Ii-aL-cDa" eventType="touchUpInside" id="Aok-fe-sTG"/>
+                                            </connections>
+                                        </button>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UCC-Up-OvA">
+                                            <rect key="frame" x="126" y="7" width="466" height="30"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="30" id="2rj-vI-yyH"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                            <connections>
+                                                <outlet property="delegate" destination="7Ii-aL-cDa" id="ZCu-Ys-qgL"/>
+                                            </connections>
+                                        </textField>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="UCC-Up-OvA" firstAttribute="centerY" secondItem="PUW-Qt-owu" secondAttribute="centerY" id="5PK-AA-D7N"/>
+                                        <constraint firstItem="UI0-gB-Cux" firstAttribute="centerY" secondItem="PUW-Qt-owu" secondAttribute="centerY" id="Lze-zN-9Av"/>
+                                        <constraint firstItem="UI0-gB-Cux" firstAttribute="leading" secondItem="PUW-Qt-owu" secondAttribute="leadingMargin" id="VNe-pP-NGg"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="UI0-gB-Cux" secondAttribute="bottom" constant="2" id="W93-om-x2d"/>
+                                        <constraint firstItem="UCC-Up-OvA" firstAttribute="leading" secondItem="UI0-gB-Cux" secondAttribute="trailing" constant="8" id="bJj-jd-trh"/>
+                                        <constraint firstItem="UCC-Up-OvA" firstAttribute="trailing" secondItem="PUW-Qt-owu" secondAttribute="trailingMargin" id="jPG-e8-jX0"/>
+                                        <constraint firstItem="UI0-gB-Cux" firstAttribute="top" secondItem="PUW-Qt-owu" secondAttribute="topMargin" constant="1" id="o8G-KI-iw6"/>
+                                    </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="W93-om-x2d"/>
+                                            <exclude reference="o8G-KI-iw6"/>
+                                        </mask>
+                                    </variation>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.87843137250000003" green="0.93333333330000001" blue="0.90685689984210516" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="comments" destination="UCC-Up-OvA" id="VH4-N1-SdC"/>
+                                    <outlet property="dueDate" destination="UI0-gB-Cux" id="cag-kk-YH9"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="TMd-uH-DRW" id="wYU-qc-UjE"/>
+                            <outlet property="delegate" destination="TMd-uH-DRW" id="Frd-ox-WpH"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Actions" id="RI4-NI-PLF">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="7C3-1U-UPK">
+                            <connections>
+                                <action selector="add" destination="TMd-uH-DRW" id="Wp2-Ti-aEp"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CrF-Qu-csi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-869" y="-1153"/>
+        </scene>
+    </scenes>
+</document>
